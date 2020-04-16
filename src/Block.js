@@ -5,7 +5,7 @@ import './Block.css'
 function Block() {
     return (
         <div >
-            <img src={logo} className='image' />
+            <img src={logo} className='image' alt="Image"/>
             <div class="container">
                 <h2>Adiba Reyaz</h2>
             </div>
