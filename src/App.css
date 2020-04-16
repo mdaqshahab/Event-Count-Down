@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+.appdiv{
+  background-color: rgba(136, 224, 148, 0.884);
+  /* background-size: cover; */
+  background-image: url("./balloon.jpg");
+  align-items: center;
+  width: 700px;
+  height: 680px;
+  margin-left: 350px;
+}
+
+.app_h1{
+  margin-top: 0px;
+  padding: 10px;
+  max-width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
