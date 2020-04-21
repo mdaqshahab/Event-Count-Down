@@ -19,7 +19,6 @@ class Countdown extends React.Component {
             const hours = countdown.format('HH');
             const minutes = countdown.format('mm');
             const seconds = countdown.format('ss');
-
             this.setState({ days, hours, minutes, seconds });
         }, 1000);
     }
@@ -27,35 +26,40 @@ class Countdown extends React.Component {
     componentWillUnmount() {
         if (this.interval) {
             clearInterval(this.interval);
+            alert("hello world");
         }
     }
 
     render() {
         const { days, hours, minutes, seconds } = this.state;
-
-        return (
-            <div>
-                <h3 className="h1">Time Remaining</h3>
-                <div className="countdown-wrapper">
-                    <div className="countdown-item">
-                        {days}
-                        <span><h3><u>days</u></h3></span>
-                    </div>
-                    <div className="countdown-item">
-                        {hours}
-                        <span><h3><u>hours</u></h3></span>
-                    </div>
-                    <div className="countdown-item">
-                        {minutes}
-                        <span><h3><u>minutes</u></h3></span>
-                    </div>
-                    <div className="countdown-item">
-                        {seconds}
-                        <span><h3><u>seconds</u></h3></span>
+        if(this.state.hours === null && this.state.minutes === null && this.state.seconds === null ){
+            return (
+                <div>
+                    <h1>Happy Birthday</h1>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>
+                    <h3 className="h1">Time Remaining</h3>
+                    <div className="countdown-wrapper">
+                        <div className="countdown-item">
+                            {hours}
+                            <span><h3><u>hours</u></h3></span>
+                        </div>
+                        <div className="countdown-item">
+                            {minutes}
+                            <span><h3><u>minutes</u></h3></span>
+                        </div>
+                        <div className="countdown-item">
+                            {seconds}
+                            <span><h3><u>seconds</u></h3></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
 
